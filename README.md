@@ -3,12 +3,11 @@
 Nft_mint_tracker is a set of python scripts which watch confirmed transactions for every block on the Ethereum L1 block chain. It only watches transactions associated with erc721 and erc1155 smart contracts. When any new action is detected then data is written to a mysql database. When enough actions have occurred in a certain amount of time then a discord bot posts data to a discord channel. This is a very basic description of what this code actually does. I will provide more insight into each script that's part of this repo.
 
 ### Requirements
-MySQL 8.0
-Full ethereum node
-IPFS gateway
-Etherscan API key
-Opensea API key
-
+ - MySQL 8.0
+ - Full ethereum node
+ - IPFS gateway
+ - Etherscan API key
+ - Opensea API key
 
 #### mint_tracker.py
 mint_tracker.py checks every block in the ethereum full node for confirmed transactions. If the smart contract address was not previously identified based on a query to the MySQL database then it is checked to see if it supports either the erc721 or erc1155 interface. If the contract passes that check then it's marked as an NFT contract.
